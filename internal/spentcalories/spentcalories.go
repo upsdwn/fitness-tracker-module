@@ -130,7 +130,7 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 // error — ошибку, если входные параметры некорректны.
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
 	if steps <= 0 {
-		return 0.0, errors.New("steps is not positive")
+		return 0, fmt.Errorf("incorrect steps count: %d", steps)
 	}
 
 	if weight <= 0 {

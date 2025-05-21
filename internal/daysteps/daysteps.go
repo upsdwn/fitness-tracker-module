@@ -41,7 +41,7 @@ func parsePackage(data string) (int, time.Duration, error) {
 	}
 
 	if steps <= 0 {
-		return 0, 0, errors.New("steps is not positive")
+		return 0, 0, errors.New("steps must be positive")
 	}
 
 	d, err := time.ParseDuration(parts[1])
